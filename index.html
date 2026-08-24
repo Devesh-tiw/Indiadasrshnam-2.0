@@ -1,139 +1,18 @@
-<!DOCTYPE html>
-<html lang="en" data-theme="dark">
-
-<head>
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
     <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🕉️</text></svg>" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>IndiaDarshnam 2.0 — Interactive Heritage & Mountain Discovery Engine</title>
+    <title>BharatDarshnam 2.0 — India's Cultural & Mountain Discovery Engine</title>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet">
-
-    <!-- Leaflet CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-
-    <!-- App Styles -->
-    <link rel="stylesheet" href="style.css" />
-</head>
-
-<body>
-
-    <!-- TOP NAVIGATION BAR -->
-    <header class="top-nav">
-        <div class="brand-group" onclick="location.reload()">
-            <div class="brand-icon-wrapper">🕉️</div>
-            <div style="display:flex; align-items:center; gap:8px;">
-                <span class="brand-title">IndiaDarshnam <span
-                        style="font-size:12px; color:var(--brand-primary); font-weight:700;">2.0</span></span>
-                <span class="brand-tag">OYO Partner Ready</span>
-            </div>
-        </div>
-
-        <!-- Search with instant auto-suggest -->
-        <div class="search-wrapper">
-            <span class="search-icon">🔍</span>
-            <input type="text" id="mainSearchInput" class="search-input-box"
-                placeholder="Search 100+ Temples, Mountains, Forts, or States (e.g. Kedarnath, Manali, Hampi)..."
-                autocomplete="off" />
-            <div id="searchDropdown" class="search-dropdown"></div>
-        </div>
-
-        <!-- Actions -->
-        <div class="nav-actions">
-            <button class="btn-nav-primary" onclick="window.openAiPlannerModal()">
-                <span>✨</span> AI Yatra Planner
-            </button>
-            <button class="btn-nav-secondary" onclick="window.toggleCircuitDrawer()">
-                <span>🗺️</span> Circuits
-            </button>
-            <button id="themeToggle" class="theme-toggle-btn" onclick="window.toggleTheme()" title="Toggle Theme">
-                ☀️
-            </button>
-        </div>
-    </header>
-
-    <!-- SUB-HEADER: CATEGORY FILTER BAR -->
-    <nav class="filter-bar">
-        <div id="categoryChipsContainer" style="display:flex; gap:8px;"></div>
-        <button class="category-chip circuit-trigger-chip" onclick="window.toggleCircuitDrawer()">
-            <span>🛣️</span> 4 Famous Yatra Circuits
-        </button>
-    </nav>
-
-    <!-- MAIN INTERACTIVE WORKSPACE -->
-    <main class="main-app-container">
-
-        <!-- LEFT DISCOVERY SIDEBAR -->
-        <aside class="sidebar-panel">
-
-            <div class="sidebar-header">
-                <!-- Era Timeline Slider -->
-                <div class="era-control-box">
-                    <div class="era-title-row">
-                        <span id="eraNameBadge" class="era-name-badge">Present Day (2026 CE)</span>
-                        <span id="eraYearValue" class="era-year-value">2026 CE</span>
-                    </div>
-                    <input type="range" id="eraRangeSlider" class="era-slider" min="-5000" max="2026" value="2026"
-                        step="50" oninput="window.updateEra(this.value)" />
-                    <div class="site-counter-strip">
-                        <span>Historical Timeline Filter</span>
-                        <span><strong id="visibleSiteCount">0</strong> destinations visible</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Destination Cards List -->
-            <div id="sitesFeed" class="sites-feed"></div>
-
-        </aside>
-
-        <!-- RIGHT LEAFLET MAP VIEWPORT -->
-        <section class="map-viewport">
-            <div id="map"></div>
-
-            <!-- Floating Map Helper -->
-            <div class="map-floating-controls">
-                <button class="map-control-btn" onclick="window.openAiPlannerModal()">
-                    <span>✨</span> Plan Itinerary with OYO Stays
-                </button>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- CIRCUIT DRAWER (SLIDE OVER) -->
-    <div id="circuitDrawer" class="circuit-drawer">
-        <div class="modal-header">
-            <div class="modal-title-wrap">
-                <span>🛣️</span>
-                <span class="modal-title">Featured Travel Circuits</span>
-            </div>
-            <button class="modal-close-btn" onclick="window.toggleCircuitDrawer()">✕</button>
-        </div>
-        <div class="modal-body" id="circuitsList"></div>
-    </div>
-
-    <!-- PRODUCTION POPUP / BOOKING MODAL -->
-    <div id="mainModalBackdrop" class="modal-backdrop">
-        <div class="modal-container">
-            <div class="modal-header">
-                <div class="modal-title-wrap">
-                    <span id="modalTitle" class="modal-title"></span>
-                </div>
-                <button class="modal-close-btn" onclick="window.closeModal()">✕</button>
-            </div>
-            <div id="modalBody" class="modal-body"></div>
-        </div>
-    </div>
-
-    <!-- Leaflet JS -->
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-
-    <!-- App Script -->
-    <script type="module" src="app.js"></script>
-</body>
-
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  </head>
+  <body class="bg-[#0a0d14] text-slate-100 overflow-hidden">
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>
