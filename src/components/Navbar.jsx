@@ -34,25 +34,50 @@ export default function Navbar({
   return (
     <header className="h-16 border-b border-white/10 dark:border-white/10 light:border-black/10 bg-[#0f121a]/90 backdrop-blur-xl px-4 md:px-6 flex items-center justify-between z-50 sticky top-0 transition-colors">
       
-      {/* Brand Identity */}
+      {/* Brand Identity with Luxury Vector Logo */}
       <div 
         className="flex items-center gap-3 cursor-pointer select-none group"
         onClick={() => window.location.reload()}
       >
-        <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-amber-600 via-orange-500 to-amber-400 flex items-center justify-center text-white shadow-lg shadow-orange-500/20 group-hover:scale-105 transition-transform">
-          <Compass className="w-5 h-5 animate-spin-slow" />
+        <div className="relative w-10 h-10 rounded-2xl bg-gradient-to-br from-amber-500 via-orange-600 to-red-600 p-[1.5px] shadow-lg shadow-orange-500/25 group-hover:scale-105 transition-all duration-300">
+          <div className="w-full h-full bg-[#0d101a] rounded-[14px] flex items-center justify-center overflow-hidden">
+            <svg viewBox="0 0 100 100" className="w-7 h-7 transform group-hover:rotate-12 transition-transform duration-500" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="#FDE68A" />
+                  <stop offset="50%" stopColor="#F59E0B" />
+                  <stop offset="100%" stopColor="#EA580C" />
+                </linearGradient>
+                <linearGradient id="auraGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="#EA580C" stopOpacity="0.4" />
+                  <stop offset="100%" stopColor="#F59E0B" stopOpacity="0.8" />
+                </linearGradient>
+              </defs>
+              {/* Radiant Sun Rays / Lotus Base */}
+              <circle cx="50" cy="50" r="42" stroke="url(#goldGrad)" strokeWidth="2.5" strokeDasharray="4 4" opacity="0.6" />
+              <circle cx="50" cy="50" r="34" fill="url(#auraGrad)" opacity="0.2" />
+              {/* Stylized Golden Temple Shikhara & Trishul Peak */}
+              <path d="M50 16L64 48H36L50 16Z" fill="url(#goldGrad)" />
+              <path d="M50 10V18M46 14H54" stroke="#FDE68A" strokeWidth="2" strokeLinecap="round" />
+              {/* Sacred Mountain Base */}
+              <path d="M22 72L42 46L54 58L68 40L80 72H22Z" fill="url(#goldGrad)" opacity="0.9" />
+              {/* Inner Sacred Center Glow */}
+              <circle cx="50" cy="56" r="5" fill="#FFFFFF" />
+            </svg>
+          </div>
         </div>
+
         <div>
           <div className="flex items-center gap-2">
-            <span className="font-extrabold text-lg tracking-tight text-white dark:text-white">
-              Bharat<span className="text-amber-400">Darshnam</span>
+            <span className="font-extrabold text-lg tracking-tight text-white">
+              Bharat<span className="bg-gradient-to-r from-amber-400 via-orange-400 to-amber-300 bg-clip-text text-transparent">Darshnam</span>
             </span>
-            <span className="text-[10px] uppercase font-bold tracking-widest px-2 py-0.5 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/20">
+            <span className="text-[9px] uppercase font-extrabold tracking-widest px-2 py-0.5 rounded-full bg-gradient-to-r from-amber-500/20 to-orange-500/20 text-amber-300 border border-amber-500/30 shadow-sm">
               2.0
             </span>
           </div>
-          <p className="text-[11px] text-slate-400 hidden sm:block">
-            India's Cultural & Mountain Discovery Engine
+          <p className="text-[11px] text-slate-400 font-medium hidden sm:block">
+            Cultural, Spiritual & Alpine Discovery
           </p>
         </div>
       </div>
