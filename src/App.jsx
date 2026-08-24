@@ -180,15 +180,14 @@ export default function App() {
         />
       )}
 
-      <CircuitsDrawer
-        isOpen={isCircuitsOpen}
-        onClose={() => setIsCircuitsOpen(false)}
-        activeCircuit={activeCircuit}
-        onSelectCircuit={(c) => {
-          setActiveCircuit(c);
-          setIsCircuitsOpen(false);
-        }}
-      />
+     <CircuitsDrawer
+  isOpen={isCircuitsOpen}
+  onClose={() => setIsCircuitsOpen(false)}
+  activeCircuit={activeCircuit}
+  onSelectCircuit={(c) => {
+    setActiveCircuit(c);
+  }}
+/>
 
       <WishlistDrawer
         isOpen={isWishlistOpen}
